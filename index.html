@@ -843,6 +843,42 @@
             <button onclick="closeAchievement()" class="btn">Close</button>
         </div>
     </div>
+    <script>
+    // Mobile sidebar toggle (optional for better UX)
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebar = document.querySelector('.sidebar');
+        const navLinks = document.querySelectorAll('.top-navbar .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 1000) {
+                    sidebar.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
+        // Optionally, add a hamburger menu for sidebar toggle
+        if (!document.querySelector('.sidebar-toggle')) {
+            const btn = document.createElement('button');
+            btn.className = 'sidebar-toggle';
+            btn.innerHTML = '&#9776;';
+            btn.setAttribute('aria-label', 'Open sidebar');
+            btn.onclick = () => {
+                const hidden = sidebar.getAttribute('aria-hidden') === 'true';
+                sidebar.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+            };
+            document.body.appendChild(btn);
+        }
+        // Hide sidebar by default on mobile
+        function handleResize() {
+            if (window.innerWidth <= 1000) {
+                sidebar.setAttribute('aria-hidden', 'true');
+            } else {
+                sidebar.setAttribute('aria-hidden', 'false');
+            }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    });
+    </script>
     <script src="daytrading-master.js"></script>
 </body>
 </html>
