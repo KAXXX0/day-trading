@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner to Expert Day Trading Guide</title>
+    <link rel="stylesheet" href="daytrading-master.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Day Trading Guide</h2>
+        <nav>
+            <a href="#beginner" class="nav-link active">Beginner</a>
+            <a href="#intermediate" class="nav-link">Intermediate</a>
+            <a href="#advanced" class="nav-link">Advanced</a>
+            <a href="#expert" class="nav-link">Expert</a>
+            <a href="#resources" class="nav-link">Resources</a>
+        </nav>
+        <div class="progress-bar">
+            <div class="progress-bar-inner" id="progress-bar-inner"></div>
+        </div>
+        <div style="text-align:center;font-size:0.95em;">
+            Progress: <span id="progress-percent">0%</span>
+        </div>
+        <div id="achievements-sidebar">
+            <h3>Achievements</h3>
+            <ul id="achievements-list">
+                <!-- Dynamically filled -->
+            </ul>
+        </div>
+    </div>
+    <main>
+    <header>
+        <h1>Beginner to Expert Day Trading Guide</h1>
+        <p>Your comprehensive, interactive roadmap to mastering day trading</p>
+    </header>
+
+    <!-- BEGINNER SECTION -->
+    <section id="beginner" class="level">
+        <h2>Beginner Level</h2>
+        <div class="subsection">
+            <h3>What is Day Trading?</h3>
+            <ul>
+                <li>Day trading is the practice of buying and selling financial instruments (stocks, forex, crypto, etc.) within the same trading day.</li>
+                <li>Positions are closed before the market closes to avoid overnight risk.</li>
+                <li>Day traders aim to profit from short-term price fluctuations.</li>
+            </ul>
+            <div class="card-example">
+                <strong>Example:</strong> Buying Apple stock at 10:00 AM and selling it at 2:00 PM the same day.
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Basic Terminology</h3>
+            <ul>
+                <li><strong>Bid/Ask:</strong> The price buyers are willing to pay (bid) and sellers are asking (ask).</li>
+                <li><strong>Spread:</strong> The difference between the bid and ask price.</li>
+                <li><strong>Volume:</strong> The number of shares/contracts traded in a period.</li>
+                <li><strong>Volatility:</strong> The degree of price fluctuation.</li>
+                <li><strong>Liquidity:</strong> How easily an asset can be bought/sold without affecting its price.</li>
+                <li><strong>Order Types:</strong> Market, limit, stop-loss, stop-limit, trailing stop, etc.</li>
+                <li><strong>Margin:</strong> Borrowed funds from a broker to trade larger positions.</li>
+                <li><strong>Leverage:</strong> Using borrowed money to increase potential returns (and risk).</li>
+            </ul>
+            <div class="card-tip">
+                <strong>Tip:</strong> Always understand the risks of leverage before using it!
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Understanding Financial Markets</h3>
+            <ul>
+                <li><strong>Stock Market:</strong> Shares of companies traded on exchanges (NYSE, NASDAQ, etc.).</li>
+                <li><strong>Forex Market:</strong> Trading currency pairs (EUR/USD, USD/JPY, etc.).</li>
+                <li><strong>Futures Market:</strong> Contracts to buy/sell assets at a future date.</li>
+                <li><strong>Crypto Market:</strong> Trading digital currencies (BTC, ETH, etc.).</li>
+                <li>Each market has unique trading hours, volatility, and regulations.</li>
+            </ul>
+            <div class="card-warning">
+                <strong>Warning:</strong> Crypto and forex markets are open 24/7, but stock markets have set hours!
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Choosing a Broker & Trading Platform</h3>
+            <ul>
+                <li>Look for regulated brokers with low fees, fast execution, and good customer support.</li>
+                <li>Popular platforms: <code>TD Ameritrade</code>, <code>Interactive Brokers</code>, <code>MetaTrader</code>, <code>TradingView</code>, <code>Thinkorswim</code>, <code>Webull</code>, <code>eToro</code>.</li>
+                <li>Check for demo accounts to practice without risking real money.</li>
+                <li>Understand the broker's margin requirements and leverage policies.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Setting Up Your Trading Environment</h3>
+            <ul>
+                <li>Stable internet connection and a reliable computer or mobile device.</li>
+                <li>Dual monitors can help track multiple charts/news feeds.</li>
+                <li>Quiet, distraction-free workspace.</li>
+                <li>Install trading software and set up watchlists.</li>
+            </ul>
+            <div class="card-tip">
+                <strong>Tip:</strong> Use a demo account to get familiar with your platform before trading real money.
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Risk Disclaimer</h3>
+            <ul>
+                <li>Day trading is risky and not suitable for everyone.</li>
+                <li>Never trade with money you cannot afford to lose.</li>
+                <li>Start small and use demo accounts to practice.</li>
+            </ul>
+            <div class="card-warning">
+                <strong>Warning:</strong> Over 80% of day traders lose money. Education and discipline are key!
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Types of Financial Instruments</h3>
+            <ul>
+                <li><strong>Stocks:</strong> Ownership in a company.</li>
+                <li><strong>ETFs:</strong> Funds that track indexes or sectors.</li>
+                <li><strong>Options:</strong> Contracts giving the right to buy/sell at a set price.</li>
+                <li><strong>Futures:</strong> Agreements to buy/sell assets at a future date.</li>
+                <li><strong>Forex:</strong> Currency pairs trading.</li>
+                <li><strong>Cryptocurrencies:</strong> Digital assets like BTC, ETH, etc.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>How Orders Work (Interactive)</h3>
+            <div class="dragdrop-question" data-question="order-types">
+                <p>Drag and drop the order types to their correct definitions:</p>
+                <div class="dragdrop-container">
+                    <div class="drag-items">
+                        <div draggable="true" class="drag-item" data-value="Market Order">Market Order</div>
+                        <div draggable="true" class="drag-item" data-value="Limit Order">Limit Order</div>
+                        <div draggable="true" class="drag-item" data-value="Stop Order">Stop Order</div>
+                    </div>
+                    <div class="drop-areas">
+                        <div class="drop-area" data-answer="Market Order">Executes immediately at best price: <span class="drop-slot"></span></div>
+                        <div class="drop-area" data-answer="Limit Order">Executes at a specified price or better: <span class="drop-slot"></span></div>
+                        <div class="drop-area" data-answer="Stop Order">Executes when price hits a trigger: <span class="drop-slot"></span></div>
+                    </div>
+                </div>
+                <button class="btn" onclick="checkDragDrop('order-types')">Check</button>
+                <div class="quiz-feedback" id="feedback-order-types"></div>
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>True or False: Quickfire</h3>
+            <form class="truefalse-quiz" data-quiz="beginner-tf">
+                <div>
+                    <label>1. Day traders always hold positions overnight.</label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="false">False</option>
+                        <option value="true">True</option>
+                    </select>
+                </div>
+                <div>
+                    <label>2. Leverage increases both potential gains and losses.</label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <div>
+                    <label>3. A stop-loss order helps limit your losses.</label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <button type="button" class="btn" onclick="checkTrueFalse('beginner-tf')">Check</button>
+                <div class="quiz-feedback" id="feedback-beginner-tf"></div>
+            </form>
+        </div>
+        <div class="quiz-section" id="quiz-beginner">
+            <h4>Beginner Quiz</h4>
+            <form>
+                <div class="quiz-question">
+                    <label>1. What is the main goal of day trading?</label><br>
+                    <input type="radio" name="q1" value="a"> Hold stocks for years<br>
+                    <input type="radio" name="q1" value="b"> Profit from short-term price movements<br>
+                    <input type="radio" name="q1" value="c"> Avoid all risks<br>
+                </div>
+                <div class="quiz-question">
+                    <label>2. Which of these is NOT an order type?</label><br>
+                    <input type="radio" name="q2" value="a"> Market order<br>
+                    <input type="radio" name="q2" value="b"> Limit order<br>
+                    <input type="radio" name="q2" value="c"> Pizza order<br>
+                </div>
+                <div class="quiz-question">
+                    <label>3. What does 'leverage' mean in trading?</label><br>
+                    <input type="radio" name="q3" value="a"> Using borrowed money to increase position size<br>
+                    <input type="radio" name="q3" value="b"> Trading only with your own cash<br>
+                    <input type="radio" name="q3" value="c"> Avoiding all risk<br>
+                </div>
+                <button type="button" class="btn" onclick="checkQuiz('beginner')">Check Answers</button>
+                <div class="quiz-feedback" id="feedback-beginner"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- INTERMEDIATE SECTION -->
+    <section id="intermediate" class="level">
+        <h2>Intermediate Level</h2>
+        <div class="subsection">
+            <h3>Market Mechanics & Order Types</h3>
+            <ul>
+                <li>Understand how orders are routed and executed.</li>
+                <li>Learn about <strong>market orders</strong> (execute at best available price) and <strong>limit orders</strong> (execute at a specified price).</li>
+                <li>Use <strong>stop-loss</strong> orders to limit losses and <strong>take-profit</strong> orders to lock in gains.</li>
+                <li>Practice using <strong>trailing stops</strong> to protect profits as price moves in your favor.</li>
+                <li>Understand <strong>order book</strong> and <strong>Level II data</strong> for deeper market insight.</li>
+            </ul>
+            <div class="card-example">
+                <strong>Example:</strong> Placing a limit order to buy 100 shares of XYZ at $10.50 means your order will only execute if the price drops to $10.50 or lower.
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Technical Analysis Basics</h3>
+            <ul>
+                <li>Learn to read candlestick charts (open, high, low, close).</li>
+                <li>Identify support and resistance levels.</li>
+                <li>Understand chart patterns: double top/bottom, head and shoulders, triangles, flags, etc.</li>
+                <li>Use indicators: <strong>Moving Averages</strong> (SMA, EMA), <strong>RSI</strong>, <strong>MACD</strong>, <strong>Bollinger Bands</strong>, <strong>VWAP</strong>.</li>
+                <li>Volume analysis: Confirm price moves with volume spikes.</li>
+            </ul>
+            <div class="card-tip">
+                <strong>Tip:</strong> Combine multiple indicators for confirmation, but avoid "analysis paralysis."
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Fundamental Analysis Overview</h3>
+            <ul>
+                <li>Understand how news, earnings, and economic data affect prices.</li>
+                <li>Track economic calendars for major events (FOMC, NFP, earnings reports).</li>
+                <li>Learn to interpret press releases and analyst upgrades/downgrades.</li>
+                <li>Monitor pre-market and after-hours trading for volatility clues.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Developing a Trading Plan</h3>
+            <ul>
+                <li>Define your trading goals (income, growth, skill-building).</li>
+                <li>Set daily loss limits and maximum position sizes.</li>
+                <li>Choose which markets and timeframes to trade.</li>
+                <li>Document your entry/exit criteria and risk management rules.</li>
+                <li>Keep a trading journal to track performance and emotions.</li>
+            </ul>
+            <div class="card-tip">
+                <strong>Tip:</strong> A written plan helps you stay disciplined and avoid emotional decisions.
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Risk Management</h3>
+            <ul>
+                <li>Never risk more than 1-2% of your account on a single trade.</li>
+                <li>Use stop-loss orders on every trade.</li>
+                <li>Calculate <strong>risk/reward ratio</strong> (aim for at least 2:1).</li>
+                <li>Diversify trades and avoid overtrading.</li>
+                <li>Understand slippage and how it can affect your results.</li>
+                <li>Be aware of margin calls and forced liquidations.</li>
+            </ul>
+            <div class="card-warning">
+                <strong>Warning:</strong> Poor risk management is the #1 reason traders blow up accounts!
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Simulated Trading (Paper Trading)</h3>
+            <ul>
+                <li>Practice your strategies in a risk-free environment.</li>
+                <li>Use demo accounts to get comfortable with order entry and execution.</li>
+                <li>Track your simulated results as if they were real.</li>
+                <li>Review your trades and learn from mistakes before risking real money.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Fill in the Blank</h3>
+            <form class="fillblank-quiz" data-quiz="intermediate-fill">
+                <div>
+                    <label>1. The <input type="text" size="10" data-answer="spread"> is the difference between the bid and ask price.</label>
+                </div>
+                <div>
+                    <label>2. <input type="text" size="10" data-answer="liquidity"> refers to how easily an asset can be bought or sold.</label>
+                </div>
+                <div>
+                    <label>3. <input type="text" size="10" data-answer="volatility"> measures the degree of price fluctuation.</label>
+                </div>
+                <button type="button" class="btn" onclick="checkFillBlank('intermediate-fill')">Check</button>
+                <div class="quiz-feedback" id="feedback-intermediate-fill"></div>
+            </form>
+        </div>
+        <div class="quiz-section" id="quiz-intermediate">
+            <h4>Intermediate Quiz</h4>
+            <form>
+                <div class="quiz-question">
+                    <label>1. What is a stop-loss order?</label><br>
+                    <input type="radio" name="q1" value="a"> An order to buy at the lowest price<br>
+                    <input type="radio" name="q1" value="b"> An order to sell if price falls to a certain level<br>
+                    <input type="radio" name="q1" value="c"> An order to buy more shares<br>
+                </div>
+                <div class="quiz-question">
+                    <label>2. What does a 2:1 risk/reward ratio mean?</label><br>
+                    <input type="radio" name="q2" value="a"> You risk $2 to make $1<br>
+                    <input type="radio" name="q2" value="b"> You risk $1 to make $2<br>
+                    <input type="radio" name="q2" value="c"> You risk nothing<br>
+                </div>
+                <div class="quiz-question">
+                    <label>3. Why is journaling important?</label><br>
+                    <input type="radio" name="q3" value="a"> To track your trades and emotions<br>
+                    <input type="radio" name="q3" value="b"> To impress your friends<br>
+                    <input type="radio" name="q3" value="c"> It's not important<br>
+                </div>
+                <button type="button" class="btn" onclick="checkQuiz('intermediate')">Check Answers</button>
+                <div class="quiz-feedback" id="feedback-intermediate"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ADVANCED SECTION -->
+    <section id="advanced" class="level">
+        <h2>Advanced Level</h2>
+        <div class="subsection">
+            <h3>Advanced Technical Analysis</h3>
+            <ul>
+                <li>Fibonacci retracements and extensions for target setting.</li>
+                <li>Advanced candlestick patterns (engulfing, doji, hammer, shooting star, etc.).</li>
+                <li>Multiple timeframe analysis (aligning trends across 1min, 5min, 1hr, daily charts).</li>
+                <li>Market internals: TICK, TRIN, advance/decline lines.</li>
+                <li>Order flow and Level II (depth of market) analysis.</li>
+                <li>Volume profile and VWAP for institutional activity clues.</li>
+            </ul>
+            <div class="card-example">
+                <strong>Example:</strong> Using a 5-minute chart for entries and a 1-hour chart for trend direction.
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Day Trading Strategies</h3>
+            <ul>
+                <li><strong>Momentum Trading:</strong> Entering trades in the direction of strong price moves, often after news or breakouts.</li>
+                <li><strong>Reversal Trading:</strong> Identifying overbought/oversold conditions for counter-trend trades.</li>
+                <li><strong>Scalping:</strong> Making dozens or hundreds of small trades for tiny profits.</li>
+                <li><strong>Breakout Trading:</strong> Trading when price breaks above resistance or below support.</li>
+                <li><strong>Gap and Go:</strong> Trading stocks that gap up/down at the open due to news.</li>
+                <li><strong>VWAP Strategies:</strong> Using the Volume Weighted Average Price as a dynamic support/resistance.</li>
+                <li><strong>News Trading:</strong> Reacting quickly to breaking news and economic releases.</li>
+            </ul>
+            <div class="card-tip">
+                <strong>Tip:</strong> Backtest your strategies on historical data before trading live!
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Trading Psychology</h3>
+            <ul>
+                <li>Control emotions: fear, greed, FOMO (fear of missing out), revenge trading.</li>
+                <li>Stick to your plan and avoid impulsive trades.</li>
+                <li>Accept losses as part of the process.</li>
+                <li>Develop discipline and patience.</li>
+                <li>Take regular breaks to avoid burnout.</li>
+                <li>Practice mindfulness and stress management techniques.</li>
+            </ul>
+            <div class="card-warning">
+                <strong>Warning:</strong> Emotional trading leads to poor decisions and losses!
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Journaling and Performance Review</h3>
+            <ul>
+                <li>Record every trade: entry/exit, size, reason, outcome, and emotions.</li>
+                <li>Review your trades weekly/monthly to identify strengths and weaknesses.</li>
+                <li>Adjust your strategy based on data, not emotions.</li>
+                <li>Use spreadsheets or trading journal apps for analytics.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Taxes and Regulations</h3>
+            <ul>
+                <li>Understand tax implications of day trading in your country.</li>
+                <li>Keep detailed records for tax reporting.</li>
+                <li>Be aware of <strong>PDT (Pattern Day Trader)</strong> rules in the US (minimum $25,000 equity for 4+ day trades in 5 days).</li>
+                <li>Know your broker's reporting and compliance requirements.</li>
+                <li>Consult a tax professional for complex situations.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Scenario Exercise</h3>
+            <div class="scenario-box">
+                <p>
+                    <strong>Scenario:</strong> You notice a stock has gapped up 10% pre-market after strong earnings. At the open, volume surges and price breaks above resistance. What strategy could you use, and what risks should you consider?
+                </p>
+                <textarea rows="4" cols="70" placeholder="Type your answer here..." id="scenario-advanced"></textarea>
+                <button class="btn" onclick="submitScenario('advanced')">Submit</button>
+                <div class="quiz-feedback" id="feedback-scenario-advanced"></div>
+            </div>
+        </div>
+        <div class="quiz-section" id="quiz-advanced">
+            <h4>Advanced Quiz</h4>
+            <form>
+                <div class="quiz-question">
+                    <label>1. What is a 'VWAP'?</label><br>
+                    <input type="radio" name="q1" value="a"> Very Wide Average Price<br>
+                    <input type="radio" name="q1" value="b"> Volume Weighted Average Price<br>
+                    <input type="radio" name="q1" value="c"> Variable Weekly Asset Price<br>
+                </div>
+                <div class="quiz-question">
+                    <label>2. What is the main risk of emotional trading?</label><br>
+                    <input type="radio" name="q2" value="a"> Making impulsive, loss-making decisions<br>
+                    <input type="radio" name="q2" value="b"> Making more money<br>
+                    <input type="radio" name="q2" value="c"> No risk<br>
+                </div>
+                <div class="quiz-question">
+                    <label>3. What is the PDT rule in the US?</label><br>
+                    <input type="radio" name="q3" value="a"> You must trade every day<br>
+                    <input type="radio" name="q3" value="b"> You need $25,000 to make 4+ day trades in 5 days<br>
+                    <input type="radio" name="q3" value="c"> You can't trade at all<br>
+                </div>
+                <button type="button" class="btn" onclick="checkQuiz('advanced')">Check Answers</button>
+                <div class="quiz-feedback" id="feedback-advanced"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- EXPERT SECTION -->
+    <section id="expert" class="level">
+        <h2>Expert Level</h2>
+        <div class="subsection">
+            <h3>Algorithmic & Automated Trading</h3>
+            <ul>
+                <li>Learn programming languages (Python, JavaScript, C#) for algorithmic trading.</li>
+                <li>Backtest strategies using historical data.</li>
+                <li>Develop and deploy trading bots (using APIs like Alpaca, Interactive Brokers, MetaTrader, etc.).</li>
+                <li>Understand latency, slippage, and execution risks in automation.</li>
+                <li>Monitor and maintain your algorithms to adapt to changing markets.</li>
+                <li>Explore machine learning for predictive models.</li>
+            </ul>
+            <div class="card-example">
+                <strong>Example:</strong> Writing a Python script to automatically buy when RSI < 30 and sell when RSI > 70.
+            </div>
+        </div>
+        <div class="subsection">
+            <h3>Advanced Risk Management</h3>
+            <ul>
+                <li>Portfolio-level risk controls (max daily loss, max drawdown, position correlation).</li>
+                <li>Hedging strategies (options, inverse ETFs, etc.).</li>
+                <li>Dynamic position sizing based on volatility or performance.</li>
+                <li>Stress testing your strategy for black swan events.</li>
+                <li>Using Value at Risk (VaR) and other quantitative risk metrics.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Professional Tools & Data</h3>
+            <ul>
+                <li>Direct market access (DMA) for faster execution.</li>
+                <li>Level II and time & sales data for order flow analysis.</li>
+                <li>Custom indicators and scripting on platforms like TradingView or NinjaTrader.</li>
+                <li>News squawk services for real-time headlines.</li>
+                <li>Alternative data sources (social sentiment, options flow, etc.).</li>
+                <li>Using APIs for real-time data feeds and automation.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Scaling Up & Trading as a Business</h3>
+            <ul>
+                <li>Forming an LLC or corporation for tax and liability purposes.</li>
+                <li>Raising capital or joining a proprietary trading firm.</li>
+                <li>Developing standard operating procedures (SOPs) for consistency.</li>
+                <li>Mentoring or teaching others to reinforce your own skills.</li>
+                <li>Building a team for research, execution, and compliance.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Continuous Learning & Adaptation</h3>
+            <ul>
+                <li>Markets evolve—keep learning new strategies and tools.</li>
+                <li>Network with other traders via forums, Discord, Twitter, or local meetups.</li>
+                <li>Attend webinars, conferences, and read trading books regularly.</li>
+                <li>Study market history and past crises for perspective.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Case Study: Algorithmic Trading</h3>
+            <div class="case-study-box">
+                <p>
+                    <strong>Case:</strong> You want to automate a mean-reversion strategy on the S&P 500 using Python. List the steps you would take, including data sourcing, backtesting, risk controls, and deployment.
+                </p>
+                <textarea rows="5" cols="70" placeholder="Type your answer here..." id="case-expert"></textarea>
+                <button class="btn" onclick="submitCase('expert')">Submit</button>
+                <div class="quiz-feedback" id="feedback-case-expert"></div>
+            </div>
+        </div>
+        <div class="quiz-section" id="quiz-expert">
+            <h4>Expert Quiz</h4>
+            <form>
+                <div class="quiz-question">
+                    <label>1. What is 'latency' in algorithmic trading?</label><br>
+                    <input type="radio" name="q1" value="a"> The time delay between order and execution<br>
+                    <input type="radio" name="q1" value="b"> The amount of leverage used<br>
+                    <input type="radio" name="q1" value="c"> The number of trades per day<br>
+                </div>
+                <div class="quiz-question">
+                    <label>2. What is a 'black swan' event?</label><br>
+                    <input type="radio" name="q2" value="a"> A rare, unpredictable market event<br>
+                    <input type="radio" name="q2" value="b"> A type of trading bot<br>
+                    <input type="radio" name="q2" value="c"> A common technical pattern<br>
+                </div>
+                <div class="quiz-question">
+                    <label>3. Why form an LLC for trading?</label><br>
+                    <input type="radio" name="q3" value="a"> For tax and liability benefits<br>
+                    <input type="radio" name="q3" value="b"> To avoid learning<br>
+                    <input type="radio" name="q3" value="c"> It's required by law<br>
+                </div>
+                <button type="button" class="btn" onclick="checkQuiz('expert')">Check Answers</button>
+                <div class="quiz-feedback" id="feedback-expert"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- RESOURCES SECTION -->
+    <section id="resources" class="level">
+        <h2>Further Resources</h2>
+        <div class="subsection">
+            <h3>Books</h3>
+            <ul>
+                <li><em>How to Day Trade for a Living</em> by Andrew Aziz</li>
+                <li><em>Trading in the Zone</em> by Mark Douglas</li>
+                <li><em>Technical Analysis of the Financial Markets</em> by John J. Murphy</li>
+                <li><em>The New Trading for a Living</em> by Dr. Alexander Elder</li>
+                <li><em>Reminiscences of a Stock Operator</em> by Edwin Lefèvre</li>
+                <li><em>Market Wizards</em> by Jack D. Schwager</li>
+                <li><em>Flash Boys</em> by Michael Lewis</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Websites & Communities</h3>
+            <ul>
+                <li><a href="https://www.investopedia.com" target="_blank">Investopedia</a></li>
+                <li><a href="https://www.tradingview.com" target="_blank">TradingView</a></li>
+                <li><a href="https://www.reddit.com/r/Daytrading/" target="_blank">Reddit: r/Daytrading</a></li>
+                <li><a href="https://www.babypips.com" target="_blank">BabyPips (for Forex)</a></li>
+                <li><a href="https://www.elitetrader.com" target="_blank">Elite Trader Forums</a></li>
+                <li><a href="https://www.finviz.com" target="_blank">Finviz</a></li>
+                <li><a href="https://www.marketwatch.com" target="_blank">MarketWatch</a></li>
+                <li><a href="https://www.tradingsim.com" target="_blank">TradingSim</a></li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Free Tools</h3>
+            <ul>
+                <li>Yahoo Finance, Finviz, MarketWatch for news and screeners.</li>
+                <li>TradingSim for paper trading and replaying market days.</li>
+                <li>Google Sheets/Excel for journaling and analytics.</li>
+                <li>TradingView for charting and backtesting.</li>
+                <li>MetaTrader for forex and algorithmic trading.</li>
+            </ul>
+        </div>
+        <div class="subsection">
+            <h3>Final Tips</h3>
+            <ul>
+                <li>Start slow, focus on learning, and protect your capital.</li>
+                <li>Never stop improving your process and mindset.</li>
+                <li>Remember: Consistency and discipline are more important than any single trade.</li>
+                <li>Network with other traders and always keep learning.</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Beginner to Expert Day Trading Guide. All rights reserved.</p>
+    </footer>
+    </main>
+    <div id="achievement-popup" class="achievement-popup" style="display:none;">
+        <div class="achievement-content">
+            <span id="achievement-title"></span>
+            <p id="achievement-desc"></p>
+            <button onclick="closeAchievement()" class="btn">Close</button>
+        </div>
+    </div>
+    <script src="daytrading-master.js"></script>
+</body>
+</html>
