@@ -13,13 +13,13 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 // Progress and achievements
 const quizKeys = {
-    beginner: ['b','c','a'],
-    'beginner-tf': ['false','true','true'],
-    'order-types': ['Market Order','Limit Order','Stop Order'],
-    intermediate: ['b','b','a'],
+    beginner: ['b','c','a','a','a'],
+    'beginner-tf': ['false','true','true','false','true'],
+    'order-types': ['Market Order','Limit Order','Stop Order','Stop-Limit Order'],
+    intermediate: ['b','b','a','a','a'],
     'intermediate-fill': ['spread','liquidity','volatility'],
-    advanced: ['b','a','b'],
-    expert: ['a','a','a']
+    advanced: ['b','a','b','a','a'],
+    expert: ['a','a','a','a','a']
 };
 let quizResults = {
     beginner: false, 'beginner-tf': false, 'order-types': false,

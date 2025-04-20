@@ -1,0 +1,11 @@
+<!-- filepath: c:\Users\ryanc\Downloads\Sites\daytrading\day-trading\assets\orderbook-diagram.svg -->
+<svg width="350" height="120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="20" width="150" height="80" fill="#e3f2fd" stroke="#2979ff"/>
+  <rect x="190" y="20" width="150" height="80" fill="#ffebee" stroke="#e53935"/>
+  <text x="35" y="40" font-size="16" fill="#2979ff">Buy Orders (Bids)</text>
+  <text x="210" y="40" font-size="16" fill="#e53935">Sell Orders (Asks)</text>
+  <text x="80" y="80" font-size="14" fill="#2979ff">Price: $99.95</text>
+  <text x="220" y="80" font-size="14" fill="#e53935">Price: $100.05</text>
+  <line x1="170" y1="20" x2="170" y2="100" stroke="#888" stroke-dasharray="4"/>
+  <text x="140" y="110" font-size="12" fill="#888">Spread</text>
+</svg>

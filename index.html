@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="daytrading-master.css">
 </head>
 <body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-navbar">
+        <div class="navbar-brand">Day Trading Guide</div>
+        <div class="navbar-links">
+            <a href="#beginner" class="nav-link">Beginner</a>
+            <a href="#intermediate" class="nav-link">Intermediate</a>
+            <a href="#advanced" class="nav-link">Advanced</a>
+            <a href="#expert" class="nav-link">Expert</a>
+            <a href="#resources" class="nav-link">Resources</a>
+        </div>
+    </nav>
     <div class="sidebar">
         <h2>Day Trading Guide</h2>
         <nav>
@@ -54,13 +65,13 @@
             </div>
             <div>
                 <h4>Diagram: Day Trading vs. Investing</h4>
-                <svg width="400" height="120">
-                    <rect x="10" y="30" width="120" height="40" fill="#e3f2fd" stroke="#2979ff"/>
-                    <text x="20" y="55" font-size="16">Day Trading</text>
-                    <rect x="270" y="30" width="120" height="40" fill="#e8f5e9" stroke="#00e676"/>
-                    <text x="280" y="55" font-size="16">Investing</text>
-                    <line x1="130" y1="50" x2="270" y2="50" stroke="#888" stroke-dasharray="4"/>
-                    <text x="140" y="45" font-size="12" fill="#888">Time Horizon: Minutes/Hours vs. Years</text>
+                <svg width="100%" height="140" viewBox="0 0 500 140">
+                    <rect x="20" y="40" width="160" height="50" rx="12" fill="#00e676" stroke="#2979ff" stroke-width="2"/>
+                    <text x="50" y="70" font-size="22" fill="#fff" font-weight="bold">Day Trading</text>
+                    <rect x="320" y="40" width="160" height="50" rx="12" fill="#2979ff" stroke="#00e676" stroke-width="2"/>
+                    <text x="350" y="70" font-size="22" fill="#fff" font-weight="bold">Investing</text>
+                    <line x1="180" y1="65" x2="320" y2="65" stroke="#ff9800" stroke-width="3" stroke-dasharray="8"/>
+                    <text x="190" y="60" font-size="14" fill="#ff9800">Time: Minutes/Hours vs. Years</text>
                 </svg>
             </div>
         </div>
@@ -78,6 +89,8 @@
                 <li><strong>PnL:</strong> Profit and Loss. <em>Track this for every trade</em></li>
                 <li><strong>Slippage:</strong> The difference between expected and actual execution price.</li>
                 <li><strong>Commission:</strong> Fee charged by broker per trade.</li>
+                <li><strong>Short Selling:</strong> Selling borrowed shares to profit from a price drop. <em>Example: Shorting TSLA at $200, buying back at $190.</em></li>
+                <li><strong>Stop-Limit Order:</strong> Becomes a limit order when a trigger price is hit.</li>
             </ul>
             <div class="card-tip">
                 <strong>Tip:</strong> Always understand the risks of leverage before using it!
@@ -107,6 +120,19 @@
 | Crypto            | 24/7              | 24/7              |
 +-------------------+-------------------+-------------------+
                 </pre>
+            </div>
+            <div>
+                <h4>Diagram: Market Types</h4>
+                <svg width="100%" height="90" viewBox="0 0 500 90">
+                    <rect x="20" y="20" width="100" height="50" rx="10" fill="#ffeb3b" stroke="#222" stroke-width="2"/>
+                    <text x="35" y="50" font-size="16" fill="#222">Stocks</text>
+                    <rect x="140" y="20" width="100" height="50" rx="10" fill="#00bcd4" stroke="#222" stroke-width="2"/>
+                    <text x="155" y="50" font-size="16" fill="#222">Forex</text>
+                    <rect x="260" y="20" width="100" height="50" rx="10" fill="#8bc34a" stroke="#222" stroke-width="2"/>
+                    <text x="275" y="50" font-size="16" fill="#222">Futures</text>
+                    <rect x="380" y="20" width="100" height="50" rx="10" fill="#e040fb" stroke="#222" stroke-width="2"/>
+                    <text x="395" y="50" font-size="16" fill="#222">Crypto</text>
+                </svg>
             </div>
         </div>
         <div class="subsection">
@@ -198,11 +224,13 @@
                         <div draggable="true" class="drag-item" data-value="Market Order">Market Order</div>
                         <div draggable="true" class="drag-item" data-value="Limit Order">Limit Order</div>
                         <div draggable="true" class="drag-item" data-value="Stop Order">Stop Order</div>
+                        <div draggable="true" class="drag-item" data-value="Stop-Limit Order">Stop-Limit Order</div>
                     </div>
                     <div class="drop-areas">
                         <div class="drop-area" data-answer="Market Order">Executes immediately at best price: <span class="drop-slot"></span></div>
                         <div class="drop-area" data-answer="Limit Order">Executes at a specified price or better: <span class="drop-slot"></span></div>
                         <div class="drop-area" data-answer="Stop Order">Executes when price hits a trigger: <span class="drop-slot"></span></div>
+                        <div class="drop-area" data-answer="Stop-Limit Order">Becomes a limit order when trigger is hit: <span class="drop-slot"></span></div>
                     </div>
                 </div>
                 <button class="btn" onclick="checkDragDrop('order-types')">Check</button>
@@ -236,6 +264,22 @@
                         <option value="false">False</option>
                     </select>
                 </div>
+                <div>
+                    <label>4. Short selling means buying low and selling high.</label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="false">False</option>
+                        <option value="true">True</option>
+                    </select>
+                </div>
+                <div>
+                    <label>5. Margin trading increases both risk and reward.</label>
+                    <select>
+                        <option value="">Select</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
                 <button type="button" class="btn" onclick="checkTrueFalse('beginner-tf')">Check</button>
                 <div class="quiz-feedback" id="feedback-beginner-tf"></div>
             </form>
@@ -260,6 +304,18 @@
                     <input type="radio" name="q3" value="a"> Using borrowed money to increase position size<br>
                     <input type="radio" name="q3" value="b"> Trading only with your own cash<br>
                     <input type="radio" name="q3" value="c"> Avoiding all risk<br>
+                </div>
+                <div class="quiz-question">
+                    <label>4. What is 'slippage'?</label><br>
+                    <input type="radio" name="q4" value="a"> The difference between expected and actual execution price<br>
+                    <input type="radio" name="q4" value="b"> The spread between bid and ask<br>
+                    <input type="radio" name="q4" value="c"> The commission paid<br>
+                </div>
+                <div class="quiz-question">
+                    <label>5. What is a stop-limit order?</label><br>
+                    <input type="radio" name="q5" value="a"> An order that becomes a limit order when a trigger price is hit<br>
+                    <input type="radio" name="q5" value="b"> An order that executes at any price<br>
+                    <input type="radio" name="q5" value="c"> An order that only sells<br>
                 </div>
                 <button type="button" class="btn" onclick="checkQuiz('beginner')">Check Answers</button>
                 <div class="quiz-feedback" id="feedback-beginner"></div>
@@ -325,6 +381,19 @@
             </ul>
             <div class="card-tip">
                 <strong>Tip:</strong> Combine multiple indicators for confirmation, but avoid "analysis paralysis."
+            </div>
+            <div>
+                <h4>Diagram: Candlestick Anatomy</h4>
+                <svg width="320" height="110" viewBox="0 0 320 110">
+                    <rect x="60" y="30" width="30" height="50" fill="#00e676" stroke="#222" stroke-width="2"/>
+                    <line x1="75" y1="10" x2="75" y2="30" stroke="#00e676" stroke-width="4"/>
+                    <line x1="75" y1="80" x2="75" y2="100" stroke="#00e676" stroke-width="4"/>
+                    <text x="100" y="60" font-size="14" fill="#222">Bullish Candle</text>
+                    <rect x="200" y="30" width="30" height="50" fill="#e53935" stroke="#222" stroke-width="2"/>
+                    <line x1="215" y1="10" x2="215" y2="30" stroke="#e53935" stroke-width="4"/>
+                    <line x1="215" y1="80" x2="215" y2="100" stroke="#e53935" stroke-width="4"/>
+                    <text x="240" y="60" font-size="14" fill="#222">Bearish Candle</text>
+                </svg>
             </div>
         </div>
         <div class="subsection">
@@ -420,6 +489,18 @@
                     <input type="radio" name="q3" value="b"> To impress your friends<br>
                     <input type="radio" name="q3" value="c"> It's not important<br>
                 </div>
+                <div class="quiz-question">
+                    <label>4. What does 'support' mean in technical analysis?</label><br>
+                    <input type="radio" name="q4" value="a"> A price level where buying interest is strong<br>
+                    <input type="radio" name="q4" value="b"> A price level where selling is strong<br>
+                    <input type="radio" name="q4" value="c"> The broker's help desk<br>
+                </div>
+                <div class="quiz-question">
+                    <label>5. What is a candlestick pattern?</label><br>
+                    <input type="radio" name="q5" value="a"> A chart formation that signals price movement<br>
+                    <input type="radio" name="q5" value="b"> A type of trading platform<br>
+                    <input type="radio" name="q5" value="c"> A broker's commission<br>
+                </div>
                 <button type="button" class="btn" onclick="checkQuiz('intermediate')">Check Answers</button>
                 <div class="quiz-feedback" id="feedback-intermediate"></div>
             </form>
@@ -440,6 +521,18 @@
             </ul>
             <div class="card-example">
                 <strong>Example:</strong> Using a 5-minute chart for entries and a 1-hour chart for trend direction.
+            </div>
+            <div>
+                <h4>Diagram: Fibonacci Retracement</h4>
+                <svg width="100%" height="80" viewBox="0 0 400 80">
+                    <line x1="40" y1="60" x2="360" y2="20" stroke="#2979ff" stroke-width="4"/>
+                    <rect x="80" y="40" width="10" height="20" fill="#ffeb3b"/>
+                    <rect x="160" y="32" width="10" height="28" fill="#00e676"/>
+                    <rect x="240" y="24" width="10" height="36" fill="#e040fb"/>
+                    <text x="70" y="75" font-size="12" fill="#222">38.2%</text>
+                    <text x="150" y="75" font-size="12" fill="#222">50%</text>
+                    <text x="230" y="75" font-size="12" fill="#222">61.8%</text>
+                </svg>
             </div>
         </div>
         <div class="subsection">
@@ -543,6 +636,18 @@
                     <input type="radio" name="q3" value="a"> You must trade every day<br>
                     <input type="radio" name="q3" value="b"> You need $25,000 to make 4+ day trades in 5 days<br>
                     <input type="radio" name="q3" value="c"> You can't trade at all<br>
+                </div>
+                <div class="quiz-question">
+                    <label>4. What is 'order flow' in trading?</label><br>
+                    <input type="radio" name="q4" value="a"> The analysis of buy/sell orders in the market<br>
+                    <input type="radio" name="q4" value="b"> The speed of internet connection<br>
+                    <input type="radio" name="q4" value="c"> The broker's commission<br>
+                </div>
+                <div class="quiz-question">
+                    <label>5. What is a 'gap and go' strategy?</label><br>
+                    <input type="radio" name="q5" value="a"> Trading stocks that gap up/down at the open and continue in that direction<br>
+                    <input type="radio" name="q5" value="b"> Trading only after lunch<br>
+                    <input type="radio" name="q5" value="c"> Avoiding all gaps<br>
                 </div>
                 <button type="button" class="btn" onclick="checkQuiz('advanced')">Check Answers</button>
                 <div class="quiz-feedback" id="feedback-advanced"></div>
@@ -660,6 +765,18 @@
                     <input type="radio" name="q3" value="a"> For tax and liability benefits<br>
                     <input type="radio" name="q3" value="b"> To avoid learning<br>
                     <input type="radio" name="q3" value="c"> It's required by law<br>
+                </div>
+                <div class="quiz-question">
+                    <label>4. What is 'backtesting'?</label><br>
+                    <input type="radio" name="q4" value="a"> Testing a strategy on historical data<br>
+                    <input type="radio" name="q4" value="b"> Trading only in the future<br>
+                    <input type="radio" name="q4" value="c"> Avoiding all risk<br>
+                </div>
+                <div class="quiz-question">
+                    <label>5. What is 'Value at Risk' (VaR)?</label><br>
+                    <input type="radio" name="q5" value="a"> A measure of potential loss in a portfolio<br>
+                    <input type="radio" name="q5" value="b"> The value of a stock<br>
+                    <input type="radio" name="q5" value="c"> The broker's commission<br>
                 </div>
                 <button type="button" class="btn" onclick="checkQuiz('expert')">Check Answers</button>
                 <div class="quiz-feedback" id="feedback-expert"></div>
